@@ -89,6 +89,21 @@ def calculadoraDesconto():
     print(f"Preço final com desconto: R$ {preco_final:.2f}")
     print()
         
+def calculadoraMedia():
+    nota1 = float(input("Digite a nota 1: ").replace(",", "."))
+    nota2 = float(input("Digite a nota 2: ").replace(",", "."))
+    nota3 = float(input("Digite a nota 3: ").replace(",", "."))
+
+    media = (nota1 + nota2 + nota3) / 3
+
+    print("\n=== Calculadora de Média Escolar ===")
+    print(f"Nota 1: {nota1:.2f}")
+    print(f"Nota 2: {nota2:.2f}")
+    print(f"Nota 3: {nota3:.2f}")
+    print(f"Média final: {media:.2f}")
+    print()
+    
+    
 def menu():
     while True:
         print("\nMenu:")
