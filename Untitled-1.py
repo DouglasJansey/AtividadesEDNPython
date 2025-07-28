@@ -60,6 +60,23 @@ def verificarBissexto():
     else:
         print(f"{ano} NÃO é um ano bissexto.")
         
+        
+def conversorMoeda():
+    reais = float(input("Digite o valor em reais (R$): ").replace(",", "."))
+    taxa_dolar = 5.20
+    taxa_euro = 6.15
+
+    dolares = reais / taxa_dolar
+    euros = reais / taxa_euro
+
+    print("=== Conversor de Moeda ===")
+    print(f"Valor em reais: R$ {reais:.2f}")
+    print(f"Valor em dólares: US$ {dolares:.2f}")
+    print(f"Valor em euros: € {euros:.2f}")
+    print()
+
+
+        
 def menu():
     while True:
         print("\nMenu:")
@@ -84,4 +101,4 @@ def menu():
             break
         else:
             print("Opção inválida! Tente novamente.")
-menu()3
+menu()
