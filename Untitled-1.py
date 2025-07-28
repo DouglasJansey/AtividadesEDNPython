@@ -69,13 +69,25 @@ def conversorMoeda():
     dolares = reais / taxa_dolar
     euros = reais / taxa_euro
 
-    print("=== Conversor de Moeda ===")
     print(f"Valor em reais: R$ {reais:.2f}")
     print(f"Valor em dólares: US$ {dolares:.2f}")
     print(f"Valor em euros: € {euros:.2f}")
     print()
 
+def calculadoraDesconto():
+    produto = input("Digite o nome do produto: ")
+    preco_original = float(input("Digite o preço original (R$): ").replace(",", "."))
+    desconto_pct = float(input("Digite a porcentagem de desconto (%): ").replace(",", "."))
 
+    valor_desconto = preco_original * (desconto_pct / 100)
+    preco_final = preco_original - valor_desconto
+
+    print(f"Produto: {produto}")
+    print(f"Preço original: R$ {preco_original:.2f}")
+    print(f"Desconto: {desconto_pct:.2f}%")
+    print(f"Valor do desconto: R$ {valor_desconto:.2f}")
+    print(f"Preço final com desconto: R$ {preco_final:.2f}")
+    print()
         
 def menu():
     while True:
