@@ -60,3 +60,28 @@ def verificarBissexto():
     else:
         print(f"{ano} NÃO é um ano bissexto.")
         
+def menu():
+    while True:
+        print("\nMenu:")
+        print("1. Checar Idade")
+        print("2. Calcular IMC")
+        print("3. Converter Temperatura")
+        print("4. Verificar Ano Bissexto")
+        print("5. Sair")
+
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == "1":
+            checarIdade()
+        elif opcao == "2":
+            calcularImc()
+        elif opcao == "3":
+            converterTemperatura()
+        elif opcao == "4":
+            verificarBissexto()
+        elif opcao == "5":
+            print("Saindo do programa...")
+            break
+        else:
+            print("Opção inválida! Tente novamente.")
+menu()3
