@@ -52,7 +52,7 @@ def converterTemperatura():
 
     print(f"Resultado: {resultado:.2f} {destino}")
     
-def verificar_bissexto():
+def verificarBissexto():
     ano = int(input("Digite um ano: "))
 
     if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
