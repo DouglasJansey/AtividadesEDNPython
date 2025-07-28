@@ -96,13 +96,24 @@ def calculadoraMedia():
 
     media = (nota1 + nota2 + nota3) / 3
 
-    print("\n=== Calculadora de Média Escolar ===")
+
     print(f"Nota 1: {nota1:.2f}")
     print(f"Nota 2: {nota2:.2f}")
     print(f"Nota 3: {nota3:.2f}")
     print(f"Média final: {media:.2f}")
     print()
-    
+
+def calculadoraConsumoDistancia():
+    distancia = float(input("Digite a distância percorrida (km): ").replace(",", "."))
+    combustivel = float(input("Digite o combustível gasto (litros): ").replace(",", "."))
+
+    consumo_medio = distancia / combustivel
+
+
+    print(f"Distância percorrida: {distancia:.2f} km")
+    print(f"Combustível gasto: {combustivel:.2f} litros")
+    print(f"Consumo médio: {consumo_medio:.2f} km/l")
+    print()
     
 def menu():
     while True:
