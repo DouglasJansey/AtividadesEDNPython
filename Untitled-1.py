@@ -1,4 +1,4 @@
-def checarIdade(age):
+def checarIdade():
     age = int(input("Digite sua idade!"))
     if age <= 0:
         print("Insira uma idade válida!")
@@ -9,7 +9,7 @@ def checarIdade(age):
         
 
 
-def calcularImc(peso, altura):
+def calcularImc():
     peso = float(input("Digite seu peso em kg: "))
     altura = float(input("Digite sua altura em metros: "))
     imc = peso / (altura ** 2)
@@ -52,4 +52,11 @@ def converterTemperatura():
 
     print(f"Resultado: {resultado:.2f} {destino}")
     
-    
+def verificar_bissexto():
+    ano = int(input("Digite um ano: "))
+
+    if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+        print(f"{ano} é um ano BISSEXTO.")
+    else:
+        print(f"{ano} NÃO é um ano bissexto.")
+        
