@@ -1,3 +1,33 @@
+
+def saudacao():
+    print("Olá, mundo!")
+
+
+def calculadoraSoma():
+    numero1 = int(input("Digite o primeiro número: "))
+    numero2 = int(input("Digite o segundo número: "))
+    soma = numero1 + numero2
+    print(f"Soma de {numero1} + {numero2} = {soma}")
+
+
+def calculadoraVolume():
+    comprimento = float(input("Digite o comprimento da caixa (cm): ").replace(",", "."))
+    largura = float(input("Digite a largura da caixa (cm): ").replace(",", "."))
+    altura = float(input("Digite a altura da caixa (cm): ").replace(",", "."))
+    volume = comprimento * largura * altura
+    print(f"Volume da caixa: {volume} cm³")
+
+def calculadoraPrecoTotal():
+    produto = input("Digite o nome do produto: ")
+    precoUnitario = float(input("Digite o preço unitário (R$): ").replace(",", "."))
+    quantidade = int(input("Digite a quantidade: "))
+    precoTotal = precoUnitario * quantidade
+
+    print(f"Produto: {produto}")
+    print(f"Preço unitário: R$ {precoUnitario:.2f}")
+    print(f"Quantidade: {quantidade}")
+    print(f"Preço total: R$ {precoTotal:.2f}")
+
 def checarIdade():
     age = int(input("Digite sua idade!"))
     if age <= 0:
@@ -119,13 +149,16 @@ def menu():
     while True:
         print("\nMenu:")
         print("1. Checar Idade")
-        print("2. Calcular IMC")
-        print("3. Converter Temperatura")
-        print("4. Verificar Ano Bissexto")
-        print("5. Cconversor de Moeda")
-        print("6. Calculadora de Desconto")
-        print("7. Calculadora de Média")
-        print("8. Calculadora de Consumo de Distância")
+        print("2. Calculadora de Soma")
+        print("3. Calculadora de Volume")
+        print("4. Calculadora de Preço Total")
+        print("5. Calcular IMC")
+        print("6. Converter Temperatura")
+        print("7. Verificar Ano Bissexto")
+        print("8. Cconversor de Moeda")
+        print("9. Calculadora de Desconto")
+        print("10. Calculadora de Média")
+        print("11. Calculadora de Consumo de Distância")
         print("0. Sair")
 
         opcao = input("Escolha uma opção: ")
@@ -133,18 +166,24 @@ def menu():
         if opcao == "1":
             checarIdade()
         elif opcao == "2":
-            calcularImc()
+            calculadoraSoma()
         elif opcao == "3":
-            converterTemperatura()
+            calculadoraVolume()
         elif opcao == "4":
-            verificarBissexto()
+            calculadoraPrecoTotal()
         elif opcao == "5":
-            conversorMoeda()
+            calcularImc()
         elif opcao == "6":
-            calculadoraDesconto()
+            converterTemperatura()
         elif opcao == "7":
-            calculadoraMedia()
+            verificarBissexto()
         elif opcao == "8":
+            conversorMoeda()
+        elif opcao == "9":
+            calculadoraDesconto()
+        elif opcao == "10":
+            calculadoraMedia()
+        elif opcao == "11":
             calculadoraConsumoDistancia()
         elif opcao == "0":
             print("Saindo do programa...")
