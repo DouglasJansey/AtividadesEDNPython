@@ -144,7 +144,7 @@ def menu():
             calculadoraDesconto()
         elif opcao == "7":
             calculadoraMedia()
-        elif opcao == "7":
+        elif opcao == "8":
             calculadoraConsumoDistancia()
         elif opcao == "0":
             print("Saindo do programa...")
