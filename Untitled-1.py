@@ -1,4 +1,4 @@
-def checkAge(age):
+def checarIdade(age):
     age = int(input("Digite sua idade!"))
     if age <= 0:
         print("Insira uma idade válida!")
@@ -9,7 +9,7 @@ def checkAge(age):
         
 
 
-def calcImc(peso, altura):
+def calcularImc(peso, altura):
     peso = float(input("Digite seu peso em kg: "))
     altura = float(input("Digite sua altura em metros: "))
     imc = peso / (altura ** 2)
@@ -25,3 +25,31 @@ def calcImc(peso, altura):
     else:
         print("Classificação: Obeso")
         
+def converterTemperatura():
+    temperatura = float(input("Digite a temperatura: "))
+    origem = input("De qual unidade? (C, F ou K): ").upper()
+    destino = input("Para qual unidade? (C, F ou K): ").upper()
+
+    if origem == "C":
+        celsius = temperatura
+    elif origem == "F":
+        celsius = (temperatura - 32) * 5 / 9
+    elif origem == "K":
+        celsius = temperatura - 273.15
+    else:
+        print("Unidade de origem inválida!")
+
+
+    if destino == "C":
+        resultado = celsius
+    elif destino == "F":
+        resultado = celsius * 9 / 5 + 32
+    elif destino == "K":
+        resultado = celsius + 273.15
+    else:
+        print("Unidade de destino inválida!")
+        return
+
+    print(f"Resultado: {resultado:.2f} {destino}")
+    
+    
