@@ -122,7 +122,11 @@ def menu():
         print("2. Calcular IMC")
         print("3. Converter Temperatura")
         print("4. Verificar Ano Bissexto")
-        print("5. Sair")
+        print("5. Cconversor de Moeda")
+        print("6. Calculadora de Desconto")
+        print("7. Calculadora de Média")
+        print("8. Calculadora de Consumo de Distância")
+        print("0. Sair")
 
         opcao = input("Escolha uma opção: ")
 
@@ -135,6 +139,14 @@ def menu():
         elif opcao == "4":
             verificarBissexto()
         elif opcao == "5":
+            conversorMoeda()
+        elif opcao == "6":
+            calculadoraDesconto()
+        elif opcao == "7":
+            calculadoraMedia()
+        elif opcao == "7":
+            calculadoraConsumoDistancia()
+        elif opcao == "0":
             print("Saindo do programa...")
             break
         else:
