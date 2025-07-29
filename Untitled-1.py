@@ -145,6 +145,126 @@ def calculadoraConsumoDistancia():
     print(f"Consumo médio: {consumo_medio:.2f} km/l")
     print()
     
+def calculadora():
+    def soma(value1, value2):
+        result = value1 + value2
+        return print(f"Resultado da soma: {result}")
+    def subtracao(value1, value2):
+        result = value1 - value2
+        return print(f"Resultado da subtração: {result}")
+    def multiplicacao(value1, value2):
+        result = value1 * value2
+        return print(f"Resultado da multiplicação: {result}")
+    def divisao(value1, value2):
+        try:
+            result = value1 / value2
+            print("Resultado da divisão: ", result)
+        except ZeroDivisionError:
+            print("Erro: Divisão por zero não é permitida.")
+            return
+        
+
+    while True:
+        print("Bem-vindo à Calculadora!")
+        print("Escolha uma das opções abaixo para realizar um cálculo:")
+        print("1. Soma")
+        print("2. Subtração")
+        print("3. Multiplicação")
+        print("4. Divisão")
+        print("0. Sair")
+        opcao = input("Escolha uma opção: ")
+         
+        if opcao in ["1", "2", "3", "4"]:
+            try:
+                valor1 = float(input("Digite o primeiro valor: "))
+                valor2 = float(input("Digite o segundo valor: "))
+            except ValueError:
+                print("Erro: Digite apenas números válidos.")
+                continue
+            
+        if opcao == "0":
+            print("Saindo da calculadora...")
+            break         
+        elif opcao == "1":
+                soma(valor1, valor2)      
+        elif opcao == "2":
+                subtracao(valor1, valor2)
+        elif opcao == "3":
+                multiplicacao(valor1, valor2)
+        elif opcao == "4":
+                divisao(valor1, valor2)
+        else:
+                print("Opção inválida! Tente novamente.")
+  
+def verificarSenha():
+    senha = input("Digite uma senha: ")
+
+    if len(senha) < 8:
+        print("Senha fraca: deve ter pelo menos 8 caracteres.")
+        return
+
+    temNumero = False
+    for caractere in senha:
+        if caractere.isdigit():
+            temNumero = True
+            break
+
+    if not temNumero:
+        print("Senha fraca: deve conter pelo menos um número.")
+    else:
+        print("Senha forte!")   
+        
+def classificarNumeros():
+    pares = 0
+    impares = 0
+
+    while True:
+        entrada = input("Digite um número (ou 'sair' para encerrar): ")
+
+        if entrada.lower() == "sair":
+            break
+
+        if not entrada.isdigit():
+            print("Por favor, digite apenas números inteiros.")
+            continue
+
+        numero = int(entrada)
+
+        if numero % 2 == 0:
+            print(f"{numero} é par.")
+            pares += 1
+        else:
+            print(f"{numero} é ímpar.")
+            impares += 1
+
+    print("\nResumo:")
+    print(f"Quantidade de números pares: {pares}")
+    print(f"Quantidade de números ímpares: {impares}")
+    
+def calcularMediaTurma():
+    notas = []
+
+    while True:
+        nome = input("Digite o nome do aluno (ou 'sair' para encerrar): ")
+        
+        if nome.lower() == "sair":
+            break
+
+        notaTexto = input(f"Digite a nota do aluno {nome}: ")
+
+        if notaTexto.replace('.', '').isdigit():
+            nota = float(notaTexto)
+            notas.append(nota) 
+        else:
+            print("Nota inválida! Digite um número.")
+    
+    if len(notas) > 0:
+        soma = sum(notas)  
+        media = soma / len(notas)  
+        print(f"\nA média da turma é: {media:.2f}")
+    else:
+        print("Nenhuma nota foi registrada.")      
+              
 def menu():
     while True:
         print("\nMenu:")
@@ -159,6 +279,10 @@ def menu():
         print("9. Calculadora de Desconto")
         print("10. Calculadora de Média")
         print("11. Calculadora de Consumo de Distância")
+        print("12. Calculadora")
+        print("13. Verificador de senha")
+        print("14. Verificar números pares e ímpares")
+        print("15. Calcular média da turma")
         print("0. Sair")
 
         opcao = input("Escolha uma opção: ")
@@ -185,6 +309,14 @@ def menu():
             calculadoraMedia()
         elif opcao == "11":
             calculadoraConsumoDistancia()
+        elif opcao == "12":
+            calculadora()
+        elif opcao == "13":
+            verificarSenha()
+        elif opcao == "14":
+            classificarNumeros()
+        elif opcao == "15":
+            calcularMediaTurma()
         elif opcao == "0":
             print("Saindo do programa...")
             break
